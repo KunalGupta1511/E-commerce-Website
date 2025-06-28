@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="../css/account.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-heading">
+            <a href="./home.html">VaultMart</a>
+        </div>
+        <div class="card">
+            <div class="heading">
+                Welcome to Your Account!
+            </div>
+            <div class="card-content">
+                <span class="paragraph">Manage your orders, track shipments, update your details, and personalize your
+                    shopping experience</span>
+                <div class="orders">
+                    <button id="orders">Your Orders</button>
+                </div>
+                <div class="edit-btns">
+                    <button id="edit-profile" onclick="edit_profile()" class="btn">Edit Your Profile</button>
+                    <button id="change-password" class="btn">Change Your Password</button>
+                </div>
+                <div class="account-info">
+                    <label for="name">Name</label>
+                    <div id="name"></div>
+                    <label for="email">E-mail</label>
+                    <div id="email"></div>
+                    <label for="address">Address</label>
+                    <div id="address"></div>
+                    <label for="role">Role</label>
+                    <div id="role"></div>
+                    <div id="passwordChange">
+                        <input type="password" id="currentPassword" placeholder="Current Password" class="editable-input">
+                        <input type="password" id="newPassword" placeholder="New Password" class="editable-input">
+                        <input type="password" id="confirmPassword" placeholder="Confirm New Password" class="editable-input">
+                        <button onclick="Password()" class="btn" id="save">Save Password</button>
+                    </div>
+                    <div class="loader" id="loader"></div>
+                </div>
+                <div class="toggle">
+                    <button id="save-changes" onclick="save()" type="submit">Save Changes</button>
+                    <button id="cancel" onclick="cancel()">Cancel</button>
+                </div>
+                <button id="logout" class="logout btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/account.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

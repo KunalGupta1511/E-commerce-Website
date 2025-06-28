@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../css/product-details.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="heading">
+            VaultMart
+        </div>
+        <!-- <input type="checkbox" id="menu-toggle"> -->
+        <nav class="menu">
+            <a href="./home.html" class="menu-item">Home</a>
+            <a href="#" class="menu-item">About</a>
+            <a href="#" class="menu-item">Services</a>
+            <a href="#" class="menu-item">Contact</a>
+            <a href="./account.html" class="menu-item">Account</a>
+        </nav>
+        <div class="icons">
+            <a href="./cart.html"><img src="../images/cart.png" width="30px" height="30px"></a>
+            <label for="menu-toggle">
+                <img src="../images/menu.png" class="menu-icon">
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <div class="images">
+        </div>
+        <div class="details">
+            <div class="title" id="product-name"></div>
+            <div class="price" id="product-price"></div>
+            <div class="description" id="product-description"></div>
+            <div class="actions">
+                <button class="add-to-cart" onclick="trigger()">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+        <div class="loader" id="loader"></div>
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal" id="modal">
+                <div class="modal-product-info">
+                    <div class="title" id="product-name2"></div>
+                    <div class="price" id="product-price2"></div>
+                </div>
+                <h2>Select Quantity</h2>
+                <input type="number" id="quantity-input" value="1" min="1">
+                <div class="modal-buttons">
+                    <button class="add-btn" id="confirm-add-btn" onclick="add_to_cart()">Add to Cart</button>
+                    <button class="cancel-btn" id="cancel-btn" onclick="cancel()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menu_icon = document.querySelector(".menu-icon");
+        const menu = document.querySelector(".menu");
+        const token = localStorage.getItem("token");
+
+        document.addEventListener("DOMContentLoaded", () => {
+            menu_icon.addEventListener("click", () => {
+                menu.classList.toggle("open");
+                menu_icon.classList.toggle("active");
+            });
+
+            if (!token) {
+                Toastify({
+                    text: `Please Login first!`,
+                    className: "info",
+                    style: {
+                        background: "linear-gradient(to right,rgb(239, 107, 31),rgb(245, 150, 103))",
+                    }
+                }).showToast();
+                setTimeout(() => {
+                    window.location.replace("User.html");
+                }, 3500);
+            }
+        })
+    </script>
+    <script src="../js/product-details.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

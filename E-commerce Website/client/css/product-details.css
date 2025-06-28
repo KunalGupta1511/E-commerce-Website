@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+}
+
+nav {
+
+    flex: 1;
+    text-align: right;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.menu-item {
+    display: inline-block;
+    padding: 0.6rem 0;
+    margin-right: 25px;
+    color: #222;
+    text-decoration: none;
+    position: relative;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}
+
+.menu-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu-icon {
+    display: none;
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.menu-item::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3a86ff;
+    transition-property: width;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.menu-item:hover{
+    color: #0248ba;
+}
+
+.menu-item:hover::after{
+    width: 125%;
+}
+
+.heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #ff5f1f;
+    /* Solid vibrant color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    /* Slight depth */
+    text-align: center;
+    margin: 40px 25px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    animation: slideIn 0.9s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    position: relative;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+    gap: 40px;
+    margin-top: 20vh;
+}
+
+.images {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: white;
+}
+
+.details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #212121;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #b12704;
+}
+
+.description {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.actions button {
+    padding: 14px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease-out;
+}
+
+.add-to-cart {
+    background-color: #f0c14b;
+    border: 1px solid #a88734;
+}
+
+.add-to-cart:hover {
+    background-color: #e2b33d;
+    transform: translateY(-3px);
+}
+
+.buy-now {
+    background-color: #ffa41c;
+    color: white;
+}
+
+.buy-now:hover {
+    background-color: #fb8c00;
+    transform: translateY(-3px);
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+
+    .menu {
+        display: none;
+        transition: all 0.6s ease;
+        background-color: rgba(245, 221, 221, 0.284);
+        padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-right: 10px;
+        transition: transform 0.6s ease;
+    }
+
+    .active {
+        transform: rotateZ(180deg);
+    }
+
+    .menu-icon:hover {
+        cursor: pointer;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .open {
+        position: absolute;
+        right: 10px;
+        top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: rgba(255, 255, 255, 1);
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        animation: slideOut 0.3s ease-out forwards;
+        transform-origin: top;
+        overflow: hidden;
+    }
+}
+
+#loader {
+    position: absolute;
+    top : 40%;
+    left : 46%;
+    margin: 20px;
+    border: 10px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.hide{
+    display : none;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Modal Box */
+.modal {
+    position: absolute;
+    top : 15%;
+    left : 30%;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    font-family: 'Roboto', sans-serif;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Modal Heading */
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* Quantity Input */
+.modal input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons .cancel-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.modal-buttons .add-btn {
+    background: linear-gradient(to right, #ff8c00, #ff5f1f);
+    color: white;
+}
+
+.modal-buttons .cancel-btn:hover {
+    background-color: #bbb;
+}
+
+.modal-buttons .add-btn:hover {
+    opacity: 0.8;
+}
+
+.modal-product-info {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-product-info .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.modal-product-info .price {
+    font-size: 18px;
+    color: #ff5f1f;
+    font-weight: 500;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
