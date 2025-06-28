@@ -71,7 +71,7 @@ VaultMart is a full-stack e-commerce web application that allows users to browse
 
    ```
    npm install
-   node index.js
+   node app.js
    ```
 4. Open `home.html` with Live Server or serve via Express
 
