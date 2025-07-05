@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My orders</title>
+    <link rel="stylesheet" href="../css/orders_page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <div class="orders-container">
+        <h2>Your Orders</h2>
+        <div class="loader" id="loader"></div>
+        <div id="orders-list">
+            <!-- Orders will be injected here dynamically -->
+        </div>
+        <div id="no-orders" class="no-orders">
+            <img src="https://img.icons8.com/ios-filled/200/empty-box.png" alt="No Orders" />
+            <h2>No orders yet</h2>
+            <p>Looks like you haven't placed any orders yet.</p>
+            <a href="home.html" class="go-shopping-btn">Start Shopping</a>
+        </div>
+
+    </div>
+
+    <script src="../js/orders_page.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Flow+Circular&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+
+        <!-- Product Review -->
+        <section class="checkout-section">
+            <h3>Your Cart</h3>
+            <div class="product-list" id="checkout-products">
+                <!-- JS will populate this with cart items -->
+            </div>
+        </section>
+
+        <!-- Shipping Info -->
+        <section class="checkout-section">
+            <h3>Shipping Address</h3>
+            <div class="shipping-info">
+                <input type="text" placeholder="Full Name" required>
+                <textarea placeholder="Full Address" required></textarea>
+                <div class="split">
+                    <input type="text" placeholder="City" required>
+                    <input type="text" placeholder="State" required>
+                    <input type="text" placeholder="ZIP Code" required>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Summary -->
+        <section class="checkout-section">
+            <h3>Payment Summary</h3>
+            <div class="payment-summary">
+                <div class="row"><span>Subtotal</span><span>₹0</span></div>
+                <div class="row"><span>Tax</span><span>₹35.00</span></div>
+                <div class="row"><span>Shipping</span><span>₹0.00</span></div>
+                <div class="row total"><span>Total</span><span id="checkout-total">₹0.00</span></div>
+            </div>
+        </section>
+
+        <!-- Payment Method -->
+        <section class="checkout-section">
+            <h3>Payment Method</h3>
+            <label><input type="radio" name="payment" checked> Cash on Delivery</label>
+        </section>
+
+        <!-- Confirm Button -->
+        <button class="place-order-btn" type="submit">Place Order</button>
+    </div>
+
+    <script src="../js/checkout.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+
+</html>
