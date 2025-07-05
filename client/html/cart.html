@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="heading">
+                    VaultMart
+                </div>
+                <!-- <input type="checkbox" id="menu-toggle"> -->
+                <nav class="menu">
+                    <a href="./home.html" class="menu-item">Home</a>
+                    <a href="#" class="menu-item">About</a>
+                    <a href="#" class="menu-item">Services</a>
+                    <a href="#" class="menu-item">Contact</a>
+                    <a href="./account.html" class="menu-item">Account</a>
+                </nav>
+                <div class="icons">
+                    <!-- <a href="./cart.html"><img src="../images/cart.png" width="30px" height="30px"></a> -->
+                    <label for="menu-toggle">
+                        <img src="../images/menu.png" class="menu-icon">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="small-container cart-page" id="main">
+        <table id="product-table">
+            <tbody>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total-price">
+            <table id="subtotal-table">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="total-price btn-container">
+            <a href="./checkout.html" class="btn">Proceed to checkout →</a>
+        </div>
+        <div class="empty-cart">
+            <h1>No products found!</h1>
+            <span>Your cart is feeling a little lonely... let's fill it with something amazing!</span>
+        </div>
+    </div>
+    <div class="loader" id="loader"></div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and ios mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="../images/play-store.png">
+                        <img src="../images/app-store.png">
+                    </div>
+                </div>
+
+                <div class="footer-col2">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col3">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>
+                        </li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        const token = localStorage.getItem("token");
+        const menu_icon = document.querySelector(".menu-icon");
+        const menu = document.querySelector(".menu");
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!token) {
+                Toastify({
+                    text: `Please Login first!`,
+                    className: "info",
+                    style: {
+                        background: "linear-gradient(to right,rgb(239, 107, 31),rgb(245, 150, 103))",
+                    }
+                }).showToast();
+                setTimeout(() => {
+                    window.location.replace("User.html");
+                }, 3500);
+            }
+
+            menu_icon.addEventListener("click" , ()=>{
+                menu_icon.classList.toggle("active");
+                menu.classList.toggle("open");
+            })
+        })
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>
